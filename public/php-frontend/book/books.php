@@ -23,7 +23,11 @@
                 <p><span>Release Date: </span> January 25, 2024</p>
                 <p><span>Publisher: </span> Mawmaw publisher </p>
                 <p><span>ISBN: </span> 1234-567890123 </p>
-                <p><span>Description: <br> </span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p><span>Description: <br> </span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                    occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 <br>
                 <br>
                 <p><span>Status </span> Available </p>
@@ -31,26 +35,35 @@
 
             </div>
         </section>
-
+        <br>
         <section class="comments-container">
             <h1>Comments:</h1>
+            <br>
 
             <div class="comments-wrapper">
                 <?php
-                for ($i = 0; $i < 5; $i++) { ?>
+                for ($i = 0; $i < 10; $i++) { ?>
 
-                    <div class="comment-content">
+                    <div class="comment">
                         <img src="" alt="">
-                        <p class="comment-details">Charles Togle <span>June 9, 2024 at 5:50pm</span></p>
-                        <p class="comment-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                        <div class="comment-content">
+                            <p class="comment-details">Charles Togle <span>9, 2024 at 5:50pm</span></p>
+                            <p class="comment-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                        </div>
                     </div>
                 <?php    }
 
                 ?>
-                </div>
-
-                    <h1>Leave a Comment</h1>
-                    <textarea name="comment-field" id=""></textarea>
+            </div>
+            <br>
+            <h1>Leave a Comment</h1>
+            <br>
+            <textarea name="comment-field" id="" class="comment-field"></textarea>
+            <br>
+            <button name="comment-submit" class="submit">Submit</button>
+            <br>
         </section>
     </main>
 </body>
