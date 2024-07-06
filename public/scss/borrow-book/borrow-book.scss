@@ -1,0 +1,78 @@
+@import "../../../assets/scss/reset.scss";
+@import "../../../resources/fonts/stylesheet.css";
+
+body {
+  background-color: $primary-color;
+}
+
+main {
+  display: flex;
+  gap: 5vmin;
+  justify-content: center;
+  align-items: center;
+  padding-inline: 10vmin;
+  min-height: 100vh;
+}
+
+img {
+  aspect-ratio: 11/18;
+  height: 60vmin;
+}
+
+section.book-details {
+  color: $default-text-color;
+  font-size: $default-font-size;
+  min-height: 100%;
+  line-height: 4.5vmin;
+  height: 60vmin;
+  display: grid;
+  grid-template-rows: 1fr 1fr 0.3fr;
+
+  div.details {
+    width: 35vw;
+    span {
+      font-family: "Kross Neue Grotesk";
+      font-weight: 800;
+    }
+  }
+
+  p,
+  li,
+  label {
+    font-family: "Kross Neue Grotesk Book";
+  }
+
+  li {
+    margin-left: 5vmin;
+    font-size: 1.5vmin;
+  }
+}
+
+label{
+  display: flex;
+  align-items: center;
+}
+
+input[type='checkbox']{
+  height: 3vmin;
+   margin-right: 1vmin;
+}
+
+
+button {
+  width: 40%;
+  justify-self: center;
+  background-color: $button-color;
+  border: transparent;
+  color: black;
+  padding: 2vmin;
+  font-family: "Kross Neue Grotesk";
+  font-weight: 800;
+  border-radius: 1vmin;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: $default-font-size;
+}
+button:hover {
+  background-color: $button-hover;
+}

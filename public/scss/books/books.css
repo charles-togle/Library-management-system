@@ -48,7 +48,7 @@ section.book-container div.book-cover {
   width: fit-content;
 }
 section.book-container div.book-cover img {
-  aspect-ratio: 11/16;
+  aspect-ratio: 11/18;
   width: 27vmin;
 }
 section.book-container div.book-cover :nth-child(2), section.book-container div.book-cover :nth-child(3) {

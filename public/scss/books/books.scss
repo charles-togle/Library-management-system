@@ -4,9 +4,6 @@
 $button-color-one: #2ecf5b;
 $button-color-one-hover: #239643;
 $button-color-one-disabled: #c92d2d;
-$button-color-two: #ee99eb;
-$button-color-two-hover: #752473;
-$primary-text-color: white;
 
 main {
   display: flex;
@@ -42,17 +39,17 @@ section.book-container {
     width: fit-content;
 
     img {
-      aspect-ratio: 11 / 16;
+      aspect-ratio: 11 / 18;
       $width: 27vmin;
       width: clamp($width, $width, $width);
     }
    
     :nth-child(2), :nth-child(3) {
-      background-color: $button-color-two;
+      background-color: $button;
     }
 
     :nth-child(2):hover, :nth-child(3):hover{
-      background-color:$button-color-two-hover;
+      background-color:$button-hover;
     }
 
     :nth-child(2):disabled {

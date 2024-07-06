@@ -1,0 +1,88 @@
+@import "../../../resources/fonts/stylesheet.css";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+body {
+  background-color: #101010;
+}
+
+body {
+  background-color: #101010;
+}
+
+main {
+  display: flex;
+  gap: 5vmin;
+  justify-content: center;
+  align-items: center;
+  padding-inline: 10vmin;
+  min-height: 100vh;
+}
+
+img {
+  aspect-ratio: 11/18;
+  height: 60vmin;
+}
+
+section.book-details {
+  color: #ffffff;
+  font-size: 2vmin;
+  min-height: 100%;
+  line-height: 4.5vmin;
+  height: 60vmin;
+  display: grid;
+  grid-template-rows: 1fr 1fr 0.3fr;
+}
+section.book-details div.details {
+  width: 35vw;
+}
+section.book-details div.details span {
+  font-family: "Kross Neue Grotesk";
+  font-weight: 800;
+}
+section.book-details p,
+section.book-details li,
+section.book-details label {
+  font-family: "Kross Neue Grotesk Book";
+}
+section.book-details li {
+  margin-left: 5vmin;
+  font-size: 1.5vmin;
+}
+
+label {
+  display: flex;
+  align-items: center;
+}
+
+input[type=checkbox] {
+  height: 3vmin;
+  margin-right: 1vmin;
+}
+
+button {
+  width: 40%;
+  justify-self: center;
+  background-color: #e1b0c2;
+  border: transparent;
+  color: black;
+  padding: 2vmin;
+  font-family: "Kross Neue Grotesk";
+  font-weight: 800;
+  border-radius: 1vmin;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 2vmin;
+}
+
+button:hover {
+  background-color: #752473;
+}/*# sourceMappingURL=borrow-book.css.map */
