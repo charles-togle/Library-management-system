@@ -1,0 +1,201 @@
+@import "../../../resources/fonts/stylesheet.css";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+body {
+  background-color: #101010;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 100vw;
+  min-height: 100vh;
+}
+
+aside.side-panel {
+  padding-top: 5vmin;
+  background-color: black;
+  padding-inline: 2rem;
+  color: #FFFFFF;
+  max-height: 100vh;
+  position: sticky;
+  top: 0;
+  display: flex;
+  gap: 5%;
+  flex-direction: column;
+}
+aside.side-panel > div {
+  display: flex;
+  flex-direction: column;
+}
+aside.side-panel button,
+aside.side-panel p {
+  width: 25vmin;
+  text-align: left;
+  background-color: transparent;
+  border: none;
+  font-family: "Kross Neue Grotesk";
+  color: #FFFFFF;
+  font-size: 2vmin;
+  font-weight: 600;
+}
+aside.side-panel button:hover {
+  background-color: rgba(217, 217, 217, 0.1411764706) !important;
+}
+aside.side-panel button {
+  padding: 1vmin;
+  cursor: pointer;
+}
+aside.side-panel p {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+aside.side-panel div.profile > div.img {
+  border-radius: 100%;
+  width: 30vmin;
+  height: 30vmin;
+  background-color: red;
+}
+aside.side-panel div.profile p {
+  margin: 3vmin auto 0 auto;
+}
+aside.side-panel button#log-out {
+  background-color: #AB3535;
+  border: none;
+  width: -moz-fit-content;
+  width: fit-content;
+  color: white;
+  margin: 0 auto;
+  margin-top: 10vmin;
+  border-radius: 0.5rem;
+  padding: 1vmin 2vmin;
+}
+
+section.booklist-container {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+div.page ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  margin-block: 2.5vh;
+}
+div.page li {
+  margin-inline: 0.25vmin;
+  padding: 0.5vmin;
+  border: 1px solid white;
+  color: #FFFFFF;
+  font-family: "Kross Neue Grotesk";
+  font-weight: 600;
+  font-size: 1.5vmin;
+  cursor: pointer;
+}
+div.page li:hover {
+  background-color: #383838;
+}
+
+div.booklist {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 80%;
+}
+
+@media screen and (max-width: 600px) {
+  div.booklist {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+div.book {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+div.book div.book-cover {
+  position: relative;
+  min-height: 25vmin;
+  z-index: 999;
+}
+div.book div.book-cover img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+div.book div.available:hover::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #FFFFFF;
+  font-family: "Kross Neue Grotesk";
+  font-weight: 600;
+  font-size: 2vmin;
+  content: "Available";
+}
+div.book div.not-available:hover::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #FFFFFF;
+  font-family: "Kross Neue Grotesk";
+  font-weight: 600;
+  font-size: 2vmin;
+  content: "Not Available";
+}
+div.book div.book-title {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 100%;
+  color: #FFFFFF;
+  font-family: "Kross Neue Grotesk";
+  font-weight: 600;
+  font-size: 2vmin;
+}
+div.book div.book-author {
+  color: #FFFFFF;
+  text-align: right;
+  font-family: "Kross Neue Grotesk";
+  font-weight: 300;
+  font-size: 2vmin;
+}
+
+div.book::before {
+  content: "";
+  padding-block: 5%;
+}
+
+div.book::after {
+  content: "";
+  padding-block: 5%;
+}/*# sourceMappingURL=account.css.map */
