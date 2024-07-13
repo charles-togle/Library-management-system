@@ -15,7 +15,7 @@
         <aside class="side-panel">
             <div class="profile">
                 <!-- <img src="" alt=""> -->
-                 <div class="img"></div>
+                <div class="img"></div>
                 <p>Charles Togle</p>
             </div>
             <div class="selection">
@@ -71,22 +71,40 @@
                     <?php } ?>
                 </ul>
             </div>
+            <div class="book-desc modal" id = "book-desc-modal">
+                    <div class="img">
+
+                    </div>
+                    <div class="description">
+                        <p><span>Title: </span> Title Title Title</p>
+                        <p><span>Author: </span> Stefanie S. Gabion</p>
+                        <p><span>Release Date: </span> October 30, 2004</p>
+                        <p><span>Publisher: </span> Gabby's Publishing</p>
+                        <p><span>ISBN: </span>1234-36789123</p>
+                        <p><span>Status: </span>Borrowed</p>
+                        <p><span>Borrowed Until: </span> June 13, 2004</p>
+                        <p><span>Overdue: </span> 5 days</p>
+                        <p><span>Penalty: </span> 250 php</p>
+                    </div>
+                    <div class = "close-button">
+                        X
+                    </div>
+            </div>
         </section>
     </main>
+
+
+    </div>
     <script defer>
         var buttons = document.querySelectorAll('div.selection>button')
         buttons.forEach(element => {
-            element.addEventListener("click", ()=>{
+            element.addEventListener("click", () => {
                 buttons.forEach(btn => {
                     btn.style.background = 'transparent';
                 })
                 element.style.background = '#d9d9d924';
-            }) 
+            })
         });
-
-        
-
-        
     </script>
 </body>
 

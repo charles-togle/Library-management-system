@@ -201,3 +201,33 @@ div.book::after {
   content: "";
   padding-block: 5%;
 }
+
+div.book-desc{
+  position: fixed;
+  color: $text-color;
+  top: 0;
+  // transform: translateY(150%);
+  z-index: 999;
+  background-color: $secondary-color;
+  display: flex;
+  flex-direction: row;
+  height: 70vh;
+  width: 50vw;
+
+  div.img{
+    
+    width: 50%;
+    height: 90%;
+    margin-block: 5%;
+    background-color: white;
+  }
+
+  div.desc{
+    display: flex;
+    justify-content: center;
+    font-family: "Kross Neue Grotesk";
+  }
+  span{
+    font-weight: 600;
+  }
+}

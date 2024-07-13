@@ -198,4 +198,30 @@ div.book::before {
 div.book::after {
   content: "";
   padding-block: 5%;
+}
+
+div.book-desc {
+  position: fixed;
+  color: #FFFFFF;
+  top: 0;
+  z-index: 999;
+  background-color: #383838;
+  display: flex;
+  flex-direction: row;
+  height: 70vh;
+  width: 50vw;
+}
+div.book-desc div.img {
+  width: 50%;
+  height: 90%;
+  margin-block: 5%;
+  background-color: white;
+}
+div.book-desc div.desc {
+  display: flex;
+  justify-content: center;
+  font-family: "Kross Neue Grotesk";
+}
+div.book-desc span {
+  font-weight: 600;
 }/*# sourceMappingURL=account.css.map */
