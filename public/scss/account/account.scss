@@ -88,6 +88,12 @@ section.booklist-container {
   align-items: center;
 }
 
+div.booklist-wrapper{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
 //for page number
 div.page {
   ul {
@@ -205,8 +211,9 @@ div.book::after {
 div.book-desc{
   position: fixed;
   color: $text-color;
-  top: 0;
-  transform: translateY(30%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 999;
   background-color: $secondary-color;
   display: flex;
@@ -214,6 +221,12 @@ div.book-desc{
   justify-content: space-around;
   aspect-ratio: 16 / 10;
   padding: 3vmin;
+  min-width: 70vmin;
+
+  // ::backdrop{
+  //   filter: blur(100%);
+  //   z-index: 999;
+  // }
 
   div.img{
     height: 55vmin;
@@ -234,6 +247,7 @@ div.book-desc{
     justify-content: space-between;
     flex-direction: column;
     font-family: "Kross Neue Grotesk";
+    
 
   }
   p{
@@ -242,4 +256,11 @@ div.book-desc{
   span{
     font-weight: 800;
   }
+}
+
+
+.modal-backdrop{
+  filter: blur(8px) brightness(30%);
+  // max-height: 100vh;
+  // overflow: hidden;
 }

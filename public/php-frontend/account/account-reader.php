@@ -32,50 +32,52 @@
 
         <section class="booklist-container">
             <!-- pagination top -->
-            <div class="page">
-                <ul>
-                    <?php
-                    for ($i = 1; $i < 5; $i++) {  //change this to while loop for database data extraction
+            <div class="booklist-wrapper">
+                <div class="page">
+                    <ul>
+                        <?php
+                        for ($i = 1; $i < 5; $i++) {  //change this to while loop for database data extraction
+                        ?>
+                            <li> <?php echo $i ?>
+                                <!-- add function for next page  -->
+                            </li>
+                        <?php } ?>
+                    </ul>
+                </div>
+                <!-- booklist -->
+                <div class="booklist">
+                    <?php for ($i = 0; $i < 20; $i++) {  //change this to while loop for database data extraction
+                        $status = "available" //add code for book status here
                     ?>
-                        <li> <?php echo $i ?>
-                            <!-- add function for next page  -->
-                        </li>
+                        <div class="book">
+                            <div class="book-cover <?php echo $status ?>" id="book-<?php echo $i // replace with book id
+                                                                                    ?>" onclick="bookDescription(<?php echo $i ?>)"> <img src="../../../resources/images/book-covers/maki.JPG" alt=""> </div>
+                            <!-- book cover -->
+                            <div class="book-title">this is text with two lines</div>
+                            <!-- title -->
+                            <div class="book-author">Stefanie</div>
+                            <!-- author -->
+                        </div>
                     <?php } ?>
-                </ul>
-            </div>
-            <!-- booklist -->
-            <div class="booklist">
-                <?php for ($i = 0; $i < 20; $i++) {  //change this to while loop for database data extraction
-                    $status = "available" //add code for book status here
-                ?>
-                    <div class="book">
-                        <div class="book-cover <?php echo $status ?>" id="book-<?php echo $i // replace with book id 
-                                                                                ?>" onclick="bookDescription(<?php echo $i?>)"> <img src="../../../resources/images/book-covers/maki.JPG" alt=""> </div>
-                        <!-- book cover -->
-                        <div class="book-title">this is text with two lines</div>
-                        <!-- title -->
-                        <div class="book-author">Stefanie</div>
-                        <!-- author -->
-                    </div>
-                <?php } ?>
-            </div>
-            <!-- pagination bottom -->
-            <div class="page">
-                <ul>
-                    <?php
-                    for ($i = 1; $i < 5; $i++) {  //change this to while loop for database data extraction
-                    ?>
-                        <li> <?php echo $i ?>
-                            <!-- add function for next page  -->
-                        </li>
-                    <?php } ?>
-                </ul>
+                </div>
+                <!-- pagination bottom -->
+                <div class="page">
+                    <ul>
+                        <?php
+                        for ($i = 1; $i < 5; $i++) {  //change this to while loop for database data extraction
+                        ?>
+                            <li> <?php echo $i ?>
+                                <!-- add function for next page  -->
+                            </li>
+                        <?php } ?>
+                    </ul>
+                </div>
             </div>
             <div class="book-desc modal" id="book-desc-modal">
-                <div class="img" id = "img">
+                <div class="img" id="img">
 
                 </div>
-                <div class="description" id = "description">
+                <div class="description" id="description">
                     <!-- <p><span>Title: </span> Book Number () </p>
                     <p><span>Author: </span> Stefanie S. Gabion</p>
                     <p><span>Release Date: </span> October 30, 2004</p>
@@ -87,7 +89,7 @@
                     <p><span>Penalty: </span> 250 php</p> -->
                 </div>
                 <div class="close-button">
-                    <button onclick = "closeModal()"> X </button>
+                    <button onclick="closeModal()"> X </button>
                 </div>
             </div>
         </section>
@@ -108,8 +110,15 @@
 
         var modal = document.getElementById('book-desc-modal');
         modal.style.visibility = 'hidden';
-        
+
         function bookDescription(bookid) {
+
+            //blur background
+            const booklist = document.querySelector(".booklist-wrapper")
+            const SidePanel = document.querySelector(".side-panel")
+            booklist.classList.add('modal-backdrop')
+            SidePanel.classList.add('modal-backdrop')
+            // const main = 
 
             const existingDescription = document.querySelectorAll('#book-desc-modal p');
             // document.querySelectorAll('#book-desc-modal')
@@ -119,17 +128,15 @@
             })
 
             const existingImage = document.querySelector("#book-desc-modal>#img>img")
-            if(existingImage){
-            existingImage.remove()
+            if (existingImage) {
+                existingImage.remove()
             }
 
-            modal.style.visibility = 'visible'
 
             const descList = ["Title:", "Author:", "Release Date:", "Publisher:", "ISBN:", "Status:", "Borrowed Until:", "Overdue:", "Penalty:"]
-            
             const img = document.getElementById('img')
             const desc = document.getElementById('description');
-            
+
             const imgContent = document.createElement("img");
             imgContent.src = "../../../resources/images/book-covers/maki.JPG";
             imgContent.alt = "book cover number " + bookid;
@@ -140,15 +147,21 @@
                 const p = document.createElement('p');
                 const span = document.createElement('span');
                 span.textContent = description; //description array
-                p.append(span); 
+                p.append(span);
                 p.innerHTML += bookid //json for the descriptions
-
                 desc.appendChild(p);
-                            
-            }); 
+                modal.style.visibility = 'visible'
+
+            });
         }
-        function closeModal(){
+
+        function closeModal() {
             modal.style.visibility = 'hidden'
+            const booklist = document.querySelector(".booklist-wrapper")
+            const SidePanel = document.querySelector(".side-panel")
+            booklist.classList.remove('modal-backdrop')
+            SidePanel.classList.remove('modal-backdrop')            
+
         }
     </script>
 </body>

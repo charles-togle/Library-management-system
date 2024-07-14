@@ -89,6 +89,12 @@ section.booklist-container {
   align-items: center;
 }
 
+div.booklist-wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
 div.page ul {
   list-style: none;
   display: flex;
@@ -203,8 +209,9 @@ div.book::after {
 div.book-desc {
   position: fixed;
   color: #FFFFFF;
-  top: 0;
-  transform: translateY(30%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 999;
   background-color: #383838;
   display: flex;
@@ -212,6 +219,7 @@ div.book-desc {
   justify-content: space-around;
   aspect-ratio: 16/10;
   padding: 3vmin;
+  min-width: 70vmin;
 }
 div.book-desc div.img {
   height: 55vmin;
@@ -233,4 +241,8 @@ div.book-desc p {
 }
 div.book-desc span {
   font-weight: 800;
+}
+
+.modal-backdrop {
+  filter: blur(8px) brightness(30%);
 }/*# sourceMappingURL=account.css.map */
