@@ -50,7 +50,7 @@
                 ?>
                     <div class="book">
                         <div class="book-cover <?php echo $status ?>" id="book-<?php echo $i // replace with book id 
-                                                                                ?>"> <img src="../../../resources/images/book-covers/maki.JPG" alt=""> </div>
+                                                                                ?>" onclick="bookDescription(<?php echo $i?>)"> <img src="../../../resources/images/book-covers/maki.JPG" alt=""> </div>
                         <!-- book cover -->
                         <div class="book-title">this is text with two lines</div>
                         <!-- title -->
@@ -71,24 +71,24 @@
                     <?php } ?>
                 </ul>
             </div>
-            <div class="book-desc modal" id = "book-desc-modal">
-                    <div class="img">
+            <div class="book-desc modal" id="book-desc-modal">
+                <div class="img" id = "img">
 
-                    </div>
-                    <div class="description">
-                        <p><span>Title: </span> Title Title Title</p>
-                        <p><span>Author: </span> Stefanie S. Gabion</p>
-                        <p><span>Release Date: </span> October 30, 2004</p>
-                        <p><span>Publisher: </span> Gabby's Publishing</p>
-                        <p><span>ISBN: </span>1234-36789123</p>
-                        <p><span>Status: </span>Borrowed</p>
-                        <p><span>Borrowed Until: </span> June 13, 2004</p>
-                        <p><span>Overdue: </span> 5 days</p>
-                        <p><span>Penalty: </span> 250 php</p>
-                    </div>
-                    <div class = "close-button">
-                        X
-                    </div>
+                </div>
+                <div class="description" id = "description">
+                    <!-- <p><span>Title: </span> Book Number () </p>
+                    <p><span>Author: </span> Stefanie S. Gabion</p>
+                    <p><span>Release Date: </span> October 30, 2004</p>
+                    <p><span>Publisher: </span> Gabby's Publishing</p>
+                    <p><span>ISBN: </span>1234-36789123</p>
+                    <p><span>Status: </span>Borrowed</p>
+                    <p><span>Borrowed Until: </span> June 13, 2004</p>
+                    <p><span>Overdue: </span> 5 days</p>
+                    <p><span>Penalty: </span> 250 php</p> -->
+                </div>
+                <div class="close-button">
+                    <button onclick = "closeModal()"> X </button>
+                </div>
             </div>
         </section>
     </main>
@@ -105,6 +105,51 @@
                 element.style.background = '#d9d9d924';
             })
         });
+
+        var modal = document.getElementById('book-desc-modal');
+        modal.style.visibility = 'hidden';
+        
+        function bookDescription(bookid) {
+
+            const existingDescription = document.querySelectorAll('#book-desc-modal p');
+            // document.querySelectorAll('#book-desc-modal')
+
+            existingDescription.forEach(description => {
+                description.remove() //remove all p so that they won't be overwritten instead it will be replaced 
+            })
+
+            const existingImage = document.querySelector("#book-desc-modal>#img>img")
+            if(existingImage){
+            existingImage.remove()
+            }
+
+            modal.style.visibility = 'visible'
+
+            const descList = ["Title:", "Author:", "Release Date:", "Publisher:", "ISBN:", "Status:", "Borrowed Until:", "Overdue:", "Penalty:"]
+            
+            const img = document.getElementById('img')
+            const desc = document.getElementById('description');
+            
+            const imgContent = document.createElement("img");
+            imgContent.src = "../../../resources/images/book-covers/maki.JPG";
+            imgContent.alt = "book cover number " + bookid;
+            img.appendChild(imgContent);
+
+
+            descList.forEach(description => { // loop through desc list
+                const p = document.createElement('p');
+                const span = document.createElement('span');
+                span.textContent = description; //description array
+                p.append(span); 
+                p.innerHTML += bookid //json for the descriptions
+
+                desc.appendChild(p);
+                            
+            }); 
+        }
+        function closeModal(){
+            modal.style.visibility = 'hidden'
+        }
     </script>
 </body>
 

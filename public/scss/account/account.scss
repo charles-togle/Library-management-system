@@ -206,28 +206,40 @@ div.book-desc{
   position: fixed;
   color: $text-color;
   top: 0;
-  // transform: translateY(150%);
+  transform: translateY(30%);
   z-index: 999;
   background-color: $secondary-color;
   display: flex;
   flex-direction: row;
-  height: 70vh;
-  width: 50vw;
+  justify-content: space-around;
+  aspect-ratio: 16 / 10;
+  padding: 3vmin;
 
   div.img{
+    height: 55vmin;
+    margin-right: 3vmin;
+    aspect-ratio: 10 / 16;
+
+    img{
     
-    width: 50%;
-    height: 90%;
-    margin-block: 5%;
-    background-color: white;
+    height: 100%;
+    aspect-ratio: 10 / 16;
+
+
+    }
   }
 
-  div.desc{
+  div.description{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    flex-direction: column;
     font-family: "Kross Neue Grotesk";
+
+  }
+  p{
+    font-size: 2.2vmin;
   }
   span{
-    font-weight: 600;
+    font-weight: 800;
   }
 }
