@@ -1,0 +1,7 @@
+# TODO LIST
+
+## Frontend
+
+---
+
+## Backend
