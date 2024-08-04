@@ -80,13 +80,7 @@ CREATE TABLE IF NOT EXISTS `AUDIT LOG` (
   CONSTRAINT `FK_AuditBookID` FOREIGN KEY (`BookID`) REFERENCES `BOOK LIST`(`BookID`) ON UPDATE CASCADE ON DELETE RESTRICT
 );";
 
-if ($conn->multi_query($sql) === TRUE) {
-    echo "Database and tables created successfully";
-    
-} else {
-    echo "Error creating database and tables: " . $conn->error;
-}
-
+$conn->multi_query($sql);
 $conn->close();
 
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -108,11 +102,7 @@ if ($result->num_rows == 0) {
     $accountType = "Admin";
     $insertAccount->bind_param("ssssss", $username, $password_hash, $name, $email, $profilePicture, $accountType);
     
-    if ($insertAccount->execute()) {
-        echo "Admin account created successfully<br>";
-    } else {
-        echo "Error creating admin account: " . $insertAccount->error . "<br>";
-    }
+    $insertAccount->execute();
     $insertAccount->close();
 }
 $findAccount->close();

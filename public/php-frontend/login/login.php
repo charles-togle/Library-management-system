@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <!-- <script defer type="module" src = "../../../includes/jquery.js"> </script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-
+    <?php 
+    require_once(dirname(dirname(dirname(__DIR__))) . '/includes/config.php');
+    ?>
 
 </head>
 
