@@ -9,11 +9,17 @@
   --color-login-text: #868397;
   --color-link: #7B6BDF;
   --font-kross-neue-grotesk: 'Kross Neue Grotesk';
-
 }
 
 @layer utilities {
   .mask-fade-lr {
+    mask-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    color-stop(20%, rgba(0, 0, 0, 1)),
+    to(rgba(0, 0, 0, 0))
+    );
     -webkit-mask-image: -webkit-gradient(
     linear,
     left top,
@@ -22,8 +28,8 @@
     to(rgba(0, 0, 0, 0))
     );
   }
-
-  .login-inputs{
+  
+  .login-inputs {
     display: flex;
     align-items: center;
     padding: 0.5rem;
@@ -38,13 +44,14 @@
       height: 60%;
       position: absolute;
     }
-    img:nth-of-type(2){
+    
+    img:nth-of-type(2) {
       left: unset;
       right: 1rem !important;
     }
   }
-
-  .login-inputs>input::placeholder{
+  
+  .login-inputs > input::placeholder {
     color: var(--color-login-text);
     font-family: var(--font-kross-neue-grotesk);
     font-weight: bold;
