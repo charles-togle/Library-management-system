@@ -15,7 +15,7 @@ export default function Button({
     <button
       onClick={handleClick}
       type={type}
-      className={`${className} w-3/4 h-10 bg-button-default font-bold text-white font-kross-neue-grotesk`}
+      className={`${className} w-3/4 h-10 bg-button-default font-bold text-white font-kross-neue-grotesk rounded-md`}
     >
       {text}
     </button>
