@@ -3,7 +3,7 @@ import Button from "./Button";
 import { Input } from "./Input";
 export default function ChangePassword(): React.ReactNode {
   return (
-    <div id="change-password">
+    <div id="login">
       <form className="w-[35vw] justify-center items-center flex flex-col">
         <p className="mb-3 text-login-text font-kross-neue-grotesk text-sm">
           Please enter your new password
