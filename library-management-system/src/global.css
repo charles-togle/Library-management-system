@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@import url("./assets/fonts/stylesheet.css");
+
+@theme {
+  --color-button-default: #4E5AA3;
+  --color-login-page: #262437;
+  --color-input: #3B3851;
+  --color-login-text: #868397;
+  --color-link: #7B6BDF;
+  --font-kross-neue-grotesk: 'Kross Neue Grotesk';
+
+}
+
+@layer utilities {
+  .mask-fade-lr {
+    -webkit-mask-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    color-stop(20%, rgba(0, 0, 0, 1)),
+    to(rgba(0, 0, 0, 0))
+    );
+  }
+
+  .login-inputs{
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    margin-bottom: 1.5rem;
+    width: 75%;
+    position: relative;
+    padding-left: 3rem;
+    border-radius: 3px;
+    background-color: var(--color-input);
+    img{
+      left: 0.5rem;
+      height: 60%;
+      position: absolute;
+    }
+    img:nth-of-type(2){
+      left: unset;
+      right: 1rem !important;
+    }
+  }
+
+  .login-inputs>input::placeholder{
+    color: var(--color-login-text);
+    font-family: var(--font-kross-neue-grotesk);
+    font-weight: bold;
+    font-size: 1rem;
+  }
+}
