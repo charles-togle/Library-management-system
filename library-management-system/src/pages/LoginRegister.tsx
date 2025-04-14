@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
-import Login from "../components/login-register/Login";
+// import Login from "../components/login-register/Login";
 import Background from "../assets/icons/login_background.png";
+import Register from "../components/login-register/Register";
 
 export default function LoginRegister(): ReactNode {
   return (
@@ -17,8 +18,10 @@ export default function LoginRegister(): ReactNode {
         id="container"
         className="w-[35vw] h-full flex justify-center items-center flex-col absolute right-0"
       >
-        <h1 className="w-full text-center text-white font-kross-neue-grotesk font-extrabold mb-3 text-3xl">MAWMAW LIBRARY</h1>
-        <Login></Login>
+        <h1 className="w-full text-center text-white font-kross-neue-grotesk font-extrabold mb-3 text-3xl">
+          MAWMAW LIBRARY
+        </h1>
+        <Register></Register>
       </div>
     </div>
   );
