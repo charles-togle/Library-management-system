@@ -3,7 +3,8 @@ import Background from "../assets/icons/login_background.png";
 // import Login from "../components/login-register/Login";
 // import Register from "../components/login-register/Register";
 // import ForgotPassword from "../components/login-register/ForgotPassword";
-import OneTimePin from "../components/login-register/OneTimePin";
+// import OneTimePin from "../components/login-register/OneTimePin";
+import ChangePassword from "../components/login-register/ChangePassword";
 
 export default function LoginRegister(): ReactNode {
   return (
@@ -23,7 +24,7 @@ export default function LoginRegister(): ReactNode {
         <h1 className="w-full text-center text-white font-kross-neue-grotesk font-extrabold mb-3 text-3xl">
           MAWMAW LIBRARY
         </h1>
-        <OneTimePin></OneTimePin>
+        <ChangePassword></ChangePassword>
       </div>
     </div>
   );
