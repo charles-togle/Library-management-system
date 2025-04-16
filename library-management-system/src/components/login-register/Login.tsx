@@ -1,11 +1,13 @@
+import { useNavigate } from "react-router-dom";
 import EmailIcon from "../../assets/icons/email_icon.png";
 import PasswordIcon from "../../assets/icons/password_icon.png";
 import Button from "./Button";
 import { Input } from "./Input";
 export default function Login(): React.ReactNode {
+  const navigate = useNavigate();
   return (
     <div id="login">
-      <form className="w-[35vw] justify-center items-center flex flex-col">
+      <form className="w-[35vw] justify-center items-center flex flex-col pb-15">
         <p className="mb-3 text-login-text font-kross-neue-grotesk text-sm">
           Please enter your email and password
         </p>
@@ -20,7 +22,14 @@ export default function Login(): React.ReactNode {
             <input type="checkbox" className="mr-3" />
             Remember me
           </label>
-          <a href="#" className="text-login-text text-sm underline">
+          <a
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              navigate("/forgot-password");
+            }}
+            className="text-login-text text-sm underline"
+          >
             Forgot password
           </a>
         </div>
@@ -34,7 +43,14 @@ export default function Login(): React.ReactNode {
         ></Button>
         <p className="w-3/4 text-center text-login-text text-sm">
           Don't have an account?{" "}
-          <a href="#" className="underline text-link">
+          <a
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              navigate("/register");
+            }}
+            className="underline text-link"
+          >
             Sign up
           </a>
         </p>

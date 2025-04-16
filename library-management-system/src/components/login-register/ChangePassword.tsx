@@ -1,10 +1,12 @@
+import { useNavigate } from "react-router-dom";
 import PasswordIcon from "../../assets/icons/password_icon.png";
 import Button from "./Button";
 import { Input } from "./Input";
 export default function ChangePassword(): React.ReactNode {
+  const navigate = useNavigate();
   return (
     <div id="login">
-      <form className="w-[35vw] justify-center items-center flex flex-col">
+      <form className="w-[35vw] items-center flex flex-col pb-20">
         <p className="mb-3 text-login-text font-kross-neue-grotesk text-sm">
           Please enter your new password
         </p>
@@ -23,12 +25,19 @@ export default function ChangePassword(): React.ReactNode {
           type="button"
           text="Change password"
           handleClick={() => {
-            console.log("clicked");
+            navigate("/login")
           }}
         ></Button>
         <p className="w-3/4 text-center text-login-text text-sm">
           Don't have an account?{" "}
-          <a href="#" className="underline text-link">
+          <a
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              navigate("/register");
+            }}
+            className="underline text-link"
+          >
             Sign up
           </a>
         </p>

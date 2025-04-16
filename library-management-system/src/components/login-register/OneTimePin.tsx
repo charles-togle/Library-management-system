@@ -1,11 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import Button from "./Button";
+import { useNavigate } from "react-router-dom";
 export default function OneTimePin(): React.ReactNode {
   const [time, setTime] = useState<number>(60);
   const [pinActive, setPinActive] = useState<boolean>(false);
   const [otp, setOtp] = useState<string[]>(Array(4).fill(""));
   const timerRef = useRef<number | null>(null);
   const inputRefs = useRef<HTMLInputElement[]>([]);
+  const navigate = useNavigate();
 
   const handleOtpInput = (index: number, value: string) => {
     if (!/^\d*$/.test(value)) return;
@@ -61,7 +63,7 @@ export default function OneTimePin(): React.ReactNode {
   }, []);
   return (
     <div id="OneTimePin">
-      <form className="w-[35vw] justify-center items-center flex flex-col">
+      <form className="w-[35vw] justify-center items-center flex flex-col pb-15">
         <p className="mb-5 text-login-text font-kross-neue-grotesk text-sm">
           The 4 digit code has been sent to your email
         </p>
@@ -103,7 +105,7 @@ export default function OneTimePin(): React.ReactNode {
           type="button"
           text="Verify"
           handleClick={() => {
-            console.log("clicked");
+            navigate("/change-password")
           }}
         ></Button>
       </form>

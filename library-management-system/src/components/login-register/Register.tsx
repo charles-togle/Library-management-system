@@ -4,11 +4,13 @@ import UsernameIcon from "../../assets/icons/username_icon.png";
 import NameIcon from "../../assets/icons/Name_icon.png";
 import { Input } from "./Input";
 import Button from "./Button";
+import { useNavigate } from "react-router-dom";
 
 export default function Register(): React.ReactNode {
+  const navigate = useNavigate();
   return (
     <div id="Register">
-      <form className="w-[35vw] justify-center items-center flex flex-col">
+      <form className="w-[35vw] justify-center items-center flex flex-col pb-5">
         <p className="mb-3 text-login-text font-kross-neue-grotesk text-sm">
           Create an Account
         </p>
@@ -30,7 +32,14 @@ export default function Register(): React.ReactNode {
         ></Button>
         <p className="w-3/4 text-center text-login-text text-sm">
           Already a member?{" "}
-          <a href="#" className="underline text-link">
+          <a
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              navigate("/login");
+            }}
+            className="underline text-link"
+          >
             Click here
           </a>
         </p>
