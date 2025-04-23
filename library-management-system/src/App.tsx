@@ -19,7 +19,7 @@ function App() {
       <AccountProvider>
         <Routes>
           <Route path="/" element={<LoginRegisterWrapper />}>
-            <Route path="/logi" element={<Login></Login>}></Route>
+            <Route path="/login" element={<Login></Login>}></Route>
             <Route path="/register" element={<Register></Register>}></Route>
             <Route
               path="/forgot-password"
